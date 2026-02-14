@@ -64,7 +64,8 @@ bool reemplazarValor(Nodo* head, int buscar, int nuevo) {
     return false;
 }
 
-//---- aqui puede empezar la funcion para el ejercicio 3 
+//---- aqui puede empezar la funcion para el ejercicio 3, Implemente una función en C++ que reciba como parámetro el puntero al primer nodo (head) de una
+//lista simplemente enlazada de enteros y que invierta completamente el orden de los nodos.
 
 
 //-------fin ejercicio 3
