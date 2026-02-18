@@ -64,11 +64,27 @@ bool reemplazarValor(Nodo* head, int buscar, int nuevo) {
     return false;
 }
 
-//---- aqui puede empezar la funcion para el ejercicio 3, Implemente una función en C++ que reciba como parámetro el puntero al primer nodo (head) de una
-//lista simplemente enlazada de enteros y que invierta completamente el orden de los nodos.
+// ejercicio3: Inversión de lista enlazada
+void invertirLista(Nodo*& head) {
+    if (head == nullptr) {
+        cout << "Lista vacía" << endl;
+        return;
+    }
 
+    Nodo* actual = head;
+    Nodo* anterior = nullptr;
+    Nodo* siguiente = nullptr;
 
-//-------fin ejercicio 3
+    while (actual != nullptr) {
+        siguiente = actual->siguiente;
+        actual->siguiente = anterior;     
+        anterior = actual;           
+        actual = siguiente;
+    }
+
+    head = anterior; // Al final, 'anterior' es la nueva cabeza
+ }
+
 // esta funcion es para insertar un nodo al final de la lista funciona para cualquier valor y se puede usar para crear la lista de prueba
 void insertar(Nodo*& head, int valor) {
     Nodo* nuevo = new Nodo(valor);  // Crear nuevo nodo
@@ -120,6 +136,10 @@ int main() {
     mostrar(lista);
 
     //aqui se pueden agregar pruebas para el ejercicio 3
+    // Prueba de ejercicio 3
+    cout << "\nEJERCICIO 3:" << endl;
+    invertirLista(lista);
+    mostrar(lista);
     
     return 0;
 }
